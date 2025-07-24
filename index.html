@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>온라인 스톱워치 - 무료 정밀 타이머</title>
+    <meta name="description" content="정확하고 사용하기 쉬운 온라인 스톱워치. 무료로 이용 가능한 정밀 타이머입니다.">
+    <meta name="keywords" content="스톱워치, 타이머, 온라인 스톱워치, 시간 측정, 운동 타이머">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>온라인 스톱워치</h1>
+            <p>정확하고 간편한 온라인 타이머</p>
+        </header>
+
+        <main>
+            <div class="stopwatch">
+                <div class="display" id="display">00:00:00</div>
+                <div class="buttons">
+                    <button id="startBtn" class="btn btn-start">시작</button>
+                    <button id="pauseBtn" class="btn btn-pause" disabled>일시정지</button>
+                    <button id="resetBtn" class="btn btn-reset">리셋</button>
+                </div>
+                <div class="lap-times" id="lapTimes">
+                    <h3>랩 타임</h3>
+                    <ul id="lapList"></ul>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <nav>
+                <a href="privacy.html">개인정보처리방침</a>
+                <a href="terms.html">이용약관</a>
+                <a href="about.html">정보</a>
+            </nav>
+            <p>&copy; 2024 온라인 스톱워치. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
