@@ -1,6 +1,6 @@
 const translations = {
     ko: {
-        title: "온라인 스톱워치",
+        title: "글로벌 상향 하향 타이머",
         subtitle: "정확하고 간편한 온라인 타이머",
         start: "시작",
         pause: "일시정지",
@@ -16,10 +16,12 @@ const translations = {
         backToStopwatch: "← 스톱워치로 돌아가기",
         privacyTitle: "개인정보처리방침",
         termsTitle: "이용약관",
-        aboutTitle: "사이트 정보"
+        aboutTitle: "사이트 정보",
+        upward: "상향",
+        downward: "하향"
     },
     en: {
-        title: "Online Stopwatch",
+        title: "Global Up Down Timer",
         subtitle: "Accurate and Simple Online Timer",
         start: "Start",
         pause: "Pause",
@@ -35,10 +37,12 @@ const translations = {
         backToStopwatch: "← Back to Stopwatch",
         privacyTitle: "Privacy Policy",
         termsTitle: "Terms of Service", 
-        aboutTitle: "About"
+        aboutTitle: "About",
+        upward: "Up",
+        downward: "Down"
     },
     ja: {
-        title: "オンラインストップウォッチ",
+        title: "グローバル アップ ダウン タイマー",
         subtitle: "正確で簡単なオンラインタイマー",
         start: "開始",
         pause: "一時停止",
@@ -54,10 +58,12 @@ const translations = {
         backToStopwatch: "← ストップウォッチに戻る",
         privacyTitle: "プライバシーポリシー",
         termsTitle: "利用規約",
-        aboutTitle: "情報"
+        aboutTitle: "情報",
+        upward: "アップ",
+        downward: "ダウン"
     },
     zh: {
-        title: "在线秒表",
+        title: "全球 上升 下降 计时器",
         subtitle: "精准简便的在线计时器",
         start: "开始",
         pause: "暂停",
@@ -73,11 +79,13 @@ const translations = {
         backToStopwatch: "← 返回秒表",
         privacyTitle: "隐私政策",
         termsTitle: "使用条款",
-        aboutTitle: "关于"
+        aboutTitle: "关于",
+        upward: "上升",
+        downward: "下降"
     },
     es: {
-        title: "Cronómetro Online",
-        subtitle: "Temporizador Online Preciso y Simple",
+        title: "Global Ascendente Descendente Temporizador",
+        subtitle: "Online Preciso y Simple Temporizador",
         start: "Iniciar",
         pause: "Pausar",
         reset: "Reiniciar",
@@ -88,10 +96,12 @@ const translations = {
         privacy: "Política de Privacidad",
         terms: "Términos de Servicio",
         about: "Acerca de",
-        copyright: "© 2025 Cronómetro Online. Todos los derechos reservados.",
+        copyright: "© 2025 Online Cronómetro. Todos los derechos reservados.",
         backToStopwatch: "← Volver al Cronómetro",
         privacyTitle: "Política de Privacidad",
         termsTitle: "Términos de Servicio",
-        aboutTitle: "Acerca de"
+        aboutTitle: "Acerca de",
+        upward: "Ascendente",
+        downward: "Descendente"
     }
 };

@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>온라인 스톱워치 - 무료 정밀 타이머</title>
-    <meta name="description" content="정확하고 사용하기 쉬운 온라인 스톱워치. 무료로 이용 가능한 정밀 타이머입니다.">
-    <meta name="keywords" content="스톱워치, 타이머, 온라인 스톱워치, 시간 측정, 운동 타이머">
+    <title>글로벌 상향 하향 타이머 - 무료 정밀 타이머</title>
+    <meta name="description" content="정확하고 사용하기 쉬운 글로벌 상향 하향 타이머. 무료로 이용 가능한 정밀 타이머입니다.">
+    <meta name="keywords" content="타이머, 상향타이머, 하향타이머, 시간 측정, 운동 타이머, 글로벌 타이머">
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5977842780338274"
      crossorigin="anonymous"></script>
     <link rel="stylesheet" href="styles.css">
@@ -22,13 +22,29 @@
                     <option value="es">Español</option>
                 </select>
             </div>
-            <h1 data-translate="title">온라인 스톱워치</h1>
+            <h1 data-translate="title">
+                <span class="title-word">글로벌</span>
+                <div class="vertical-stack">
+                    <span class="up-text">상향</span>
+                    <span class="down-text">하향</span>
+                </div>
+                <span class="title-word">타이머</span>
+            </h1>
             <p data-translate="subtitle">정확하고 간편한 온라인 타이머</p>
         </header>
 
         <main>
-            <div class="stopwatch">
-                <div class="display" id="display">00:00:00</div>
+            <div class="mode-toggle">
+                <button class="toggle-btn active" id="stopwatchMode" data-translate="upward">상향</button>
+                <button class="toggle-btn" id="timerMode" data-translate="downward">하향</button>
+            </div>
+            
+            <div class="stopwatch" id="stopwatchContainer">
+                <button class="settings-btn" id="settingsBtn" title="색상 설정">⚙️</button>
+                <div class="spacer"></div>
+                <div class="display" id="display">
+                    <span class="time-main">00:00:00</span><span class="time-ms">.00</span>
+                </div>
                 <div class="buttons">
                     <button id="startBtn" class="btn btn-start" data-translate="start">시작</button>
                     <button id="pauseBtn" class="btn btn-pause" data-translate="pause" disabled>일시정지</button>
@@ -37,6 +53,26 @@
                 <div class="lap-times" id="lapTimes">
                     <h3 data-translate="lapTimes">랩 타임</h3>
                     <ul id="lapList"></ul>
+                </div>
+            </div>
+            
+            <div class="timer" id="timerContainer" style="display: none;">
+                <button class="settings-btn" id="timerSettingsBtn" title="색상 설정">⚙️</button>
+                <div class="spacer"></div>
+                <div class="time-input" id="timeInput">
+                    <input type="number" id="hoursInput" min="0" max="23" value="0" placeholder="시">
+                    <span>:</span>
+                    <input type="number" id="minutesInput" min="0" max="59" value="5" placeholder="분">
+                    <span>:</span>
+                    <input type="number" id="secondsInput" min="0" max="59" value="0" placeholder="초">
+                </div>
+                <div class="display" id="timerDisplay">
+                    <span class="time-main">00:05:00</span><span class="time-ms">.00</span>
+                </div>
+                <div class="buttons">
+                    <button id="timerStartBtn" class="btn btn-start" data-translate="start">시작</button>
+                    <button id="timerPauseBtn" class="btn btn-pause" data-translate="pause" disabled>일시정지</button>
+                    <button id="timerResetBtn" class="btn btn-reset" data-translate="reset">리셋</button>
                 </div>
             </div>
         </main>
