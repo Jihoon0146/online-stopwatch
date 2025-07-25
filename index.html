@@ -13,20 +13,29 @@
 <body>
     <div class="container">
         <header>
-            <h1>온라인 스톱워치</h1>
-            <p>정확하고 간편한 온라인 타이머</p>
+            <div class="language-selector">
+                <select id="languageSelect">
+                    <option value="ko">한국어</option>
+                    <option value="en">English</option>
+                    <option value="ja">日本語</option>
+                    <option value="zh">中文</option>
+                    <option value="es">Español</option>
+                </select>
+            </div>
+            <h1 data-translate="title">온라인 스톱워치</h1>
+            <p data-translate="subtitle">정확하고 간편한 온라인 타이머</p>
         </header>
 
         <main>
             <div class="stopwatch">
                 <div class="display" id="display">00:00:00</div>
                 <div class="buttons">
-                    <button id="startBtn" class="btn btn-start">시작</button>
-                    <button id="pauseBtn" class="btn btn-pause" disabled>일시정지</button>
-                    <button id="resetBtn" class="btn btn-reset">리셋</button>
+                    <button id="startBtn" class="btn btn-start" data-translate="start">시작</button>
+                    <button id="pauseBtn" class="btn btn-pause" data-translate="pause" disabled>일시정지</button>
+                    <button id="resetBtn" class="btn btn-reset" data-translate="reset">리셋</button>
                 </div>
                 <div class="lap-times" id="lapTimes">
-                    <h3>랩 타임</h3>
+                    <h3 data-translate="lapTimes">랩 타임</h3>
                     <ul id="lapList"></ul>
                 </div>
             </div>
@@ -34,14 +43,15 @@
 
         <footer>
             <nav>
-                <a href="privacy.html">개인정보처리방침</a>
-                <a href="terms.html">이용약관</a>
-                <a href="about.html">정보</a>
+                <a href="privacy.html" data-translate="privacy">개인정보처리방침</a>
+                <a href="terms.html" data-translate="terms">이용약관</a>
+                <a href="about.html" data-translate="about">정보</a>
             </nav>
-            <p>&copy; 2025 온라인 스톱워치. All rights reserved.</p>
+            <p data-translate="copyright">&copy; 2025 온라인 스톱워치. All rights reserved.</p>
         </footer>
     </div>
 
+    <script src="translations.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

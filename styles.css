@@ -24,6 +24,29 @@ body {
 header {
     margin-bottom: 40px;
     color: white;
+    position: relative;
+}
+
+.language-selector {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 10;
+}
+
+.language-selector select {
+    background: rgba(255, 255, 255, 0.9);
+    border: none;
+    border-radius: 5px;
+    padding: 8px 12px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    outline: none;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.language-selector select:hover {
+    background: white;
 }
 
 header h1 {

@@ -1,3 +1,49 @@
+class LanguageManager {
+    constructor() {
+        this.currentLanguage = localStorage.getItem('language') || 'ko';
+        this.initLanguageSelector();
+        this.translatePage();
+    }
+    
+    initLanguageSelector() {
+        const languageSelect = document.getElementById('languageSelect');
+        if (languageSelect) {
+            languageSelect.value = this.currentLanguage;
+            languageSelect.addEventListener('change', (e) => {
+                this.changeLanguage(e.target.value);
+            });
+        }
+    }
+    
+    changeLanguage(language) {
+        this.currentLanguage = language;
+        localStorage.setItem('language', language);
+        document.documentElement.lang = language;
+        this.translatePage();
+    }
+    
+    translatePage() {
+        const elementsToTranslate = document.querySelectorAll('[data-translate]');
+        elementsToTranslate.forEach(element => {
+            const key = element.getAttribute('data-translate');
+            if (translations[this.currentLanguage] && translations[this.currentLanguage][key]) {
+                element.textContent = translations[this.currentLanguage][key];
+            }
+        });
+        
+        document.title = translations[this.currentLanguage]?.title || document.title;
+        
+        const metaDescription = document.querySelector('meta[name="description"]');
+        if (metaDescription && translations[this.currentLanguage]?.subtitle) {
+            metaDescription.setAttribute('content', translations[this.currentLanguage].subtitle);
+        }
+    }
+    
+    getText(key) {
+        return translations[this.currentLanguage]?.[key] || translations.ko[key] || key;
+    }
+}
+
 class Stopwatch {
     constructor() {
         this.startTime = 0;
@@ -53,7 +99,7 @@ class Stopwatch {
             
             this.startBtn.disabled = true;
             this.pauseBtn.disabled = false;
-            this.startBtn.textContent = '실행중';
+            this.startBtn.textContent = window.languageManager.getText('running');
         }
     }
     
@@ -64,7 +110,7 @@ class Stopwatch {
             
             this.startBtn.disabled = false;
             this.pauseBtn.disabled = true;
-            this.startBtn.textContent = '계속';
+            this.startBtn.textContent = window.languageManager.getText('continue');
             
             this.addLap();
         }
@@ -79,7 +125,7 @@ class Stopwatch {
         this.updateDisplay();
         this.startBtn.disabled = false;
         this.pauseBtn.disabled = true;
-        this.startBtn.textContent = '시작';
+        this.startBtn.textContent = window.languageManager.getText('start');
         
         this.lapList.innerHTML = '';
     }
@@ -107,7 +153,7 @@ class Stopwatch {
             const lapTime = this.formatTime(this.elapsedTime);
             const lapItem = document.createElement('li');
             lapItem.innerHTML = `
-                <span>랩 ${this.lapCounter}</span>
+                <span>${window.languageManager.getText('lap')} ${this.lapCounter}</span>
                 <span>${lapTime}</span>
             `;
             this.lapList.appendChild(lapItem);
@@ -119,6 +165,7 @@ class Stopwatch {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+    window.languageManager = new LanguageManager();
     new Stopwatch();
     
     console.log('온라인 스톱워치가 시작되었습니다!');
